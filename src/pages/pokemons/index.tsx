@@ -1,23 +1,28 @@
-import { getPokemonByName } from '@services/pokemons-services';
-import { GetServerSideProps } from 'next';
+import { PokemonCard } from '@/components';
+import { getPokemons } from '@services/pokemons-services';
+import type { GetServerSideProps, NextPage } from 'next';
+import type { Pokemon } from 'pokenode-ts';
 
 interface Props {
-    pokemon: any;
+    pokemons: Pokemon[];
 }
 
-export default function Pokemons(props: Props) {
+const Pokemons: NextPage<Props, any> = ({ pokemons }: Props) => {
     return (
         <main className='m-0'>
-            <p>{JSON.stringify(props.pokemon)}</p>
+            <PokemonCard pokemon={pokemons[0]} />
         </main>
     );
-}
+};
 
 export const getServerSideProps: GetServerSideProps = async context => {
-    const charmander = await getPokemonByName('charmander');
+    const pokemons: Pokemon[] = await getPokemons({ perPage: 10, offset: 10 });
+
     return {
         props: {
-            pokemon: charmander,
+            pokemons,
         },
     };
 };
+
+export default Pokemons;

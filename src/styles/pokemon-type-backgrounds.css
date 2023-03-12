@@ -1,0 +1,71 @@
+.normalBackground {
+    background: var(--normal-color);
+}
+
+.fireBackground {
+    background: var(--fire-color);
+}
+
+.waterBackground {
+    background: var(--water-color);
+}
+
+.electricBackground {
+    background: var(--electric-color);
+}
+
+.groundBackground {
+    background: var(--ground-color);
+}
+
+.grassBackground {
+    background: var(--grass-color);
+}
+
+.iceBackground {
+    background: var(--ice-color);
+}
+
+.poisonBackground {
+    background: var(--poison-color);
+}
+
+.flyingBackground {
+    background: var(--flying-color);
+}
+
+.psychicBackground {
+    background: var(--psychic-color);
+}
+
+.bugBackground {
+    background: var(--bug-color);
+}
+
+.rockBackground {
+    background: var(--rock-color);
+}
+
+.fightingBackground {
+    background: var(--fighting-color);
+}
+
+.ghostBackground {
+    background: var(--ghost-color);
+}
+
+.dragonBackground {
+    background: var(--dragon-color);
+}
+
+.darkBackground {
+    background: var(--dark-color);
+}
+
+.steelBackground {
+    background: var(--steel-color);
+}
+
+.fairyBackground {
+    background: var(--fairy-color);
+}
