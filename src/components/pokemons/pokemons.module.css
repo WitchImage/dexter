@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    grid-column: 1 / all;
+    place-items: center;
+}
+
+.pokemonsContainer {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    place-content: center;
+    gap: 1rem;
+}
+
+.header {
+    display: grid;
+    grid-column: 1 / all;
+    place-items: center;
+}
+
+.header>.h1 {
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+}
