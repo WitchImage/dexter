@@ -6,7 +6,7 @@ interface Props {
     pokemon: Pokemon;
 }
 
-const Pokemons: NextPage<Props, any> = ({ pokemon }: Props) => {
+const PokemonPage: NextPage<Props, any> = ({ pokemon }: Props) => {
     return (
         <main>
             <Head>
@@ -16,4 +16,4 @@ const Pokemons: NextPage<Props, any> = ({ pokemon }: Props) => {
     );
 };
 
-export default Pokemons;
+export default PokemonPage;

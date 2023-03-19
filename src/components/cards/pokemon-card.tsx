@@ -5,6 +5,7 @@ import type { FC } from 'react';
 import styles from './pokemon-card.module.css';
 import Image from 'next/image';
 import { capitalizeFirstLetter } from '@/utils/capitalize';
+import { useRouter } from 'next/router';
 
 interface Props {
     pokemon: Pokemon;
@@ -16,11 +17,17 @@ const PokemonCard: FC<Props> = ({ pokemon }) => {
         pokemon.sprites.other?.['official-artwork'].front_default ?? '';
     const pokemonName = capitalizeFirstLetter(pokemon.name);
 
+    const router = useRouter();
+
+    const handleMouseOver = (x: number, y: number): void => {};
+
     return (
         <div
             className={`${styles.pokemonCard} ${pokemonBackgrounds[pokemonType]}`}
+            onClick={() => router.push('/pokemon')}
+            onMouseOver={e => handleMouseOver(e.clientX, e.clientY)}
         >
-            <h2 className={styles.h2}>{pokemonName}</h2>
+            <h2 className={styles.pokemonName}>{pokemonName}</h2>
             <div className={styles.imageContainer}>
                 <Image
                     src={pokemonImage}
