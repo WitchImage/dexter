@@ -19,13 +19,10 @@ const PokemonCard: FC<Props> = ({ pokemon }) => {
 
     const router = useRouter();
 
-    const handleMouseOver = (x: number, y: number): void => {};
-
     return (
         <div
             className={`${styles.pokemonCard} ${pokemonBackgrounds[pokemonType]}`}
-            onClick={() => router.push('/pokemon')}
-            onMouseOver={e => handleMouseOver(e.clientX, e.clientY)}
+            onClick={() => router.push(`/pokemon/${pokemon.name}`)}
         >
             <h2 className={styles.pokemonName}>{pokemonName}</h2>
             <div className={styles.imageContainer}>

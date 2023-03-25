@@ -1,0 +1,5 @@
+.container {
+    display: grid;
+    grid-column: 1 / all;
+    place-items: center;
+}
