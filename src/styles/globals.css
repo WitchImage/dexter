@@ -21,6 +21,7 @@
     --dark-color: #754;
     --steel-color: #aab;
     --fairy-color: #e9e;
+    --red: #c81b33;
     --max-width: 1024px;
     background-color: var(--bg-color);
     color: white;

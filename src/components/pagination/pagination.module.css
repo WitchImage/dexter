@@ -1,0 +1,33 @@
+.paginationContainer {
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    font-size: large;
+    gap: 0.5em;
+}
+
+.paginationItem {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid;
+    border-radius: 100%;
+    transition: all 0.15s ease-out;
+    backdrop-filter: blur(5px);
+    text-shadow: 0 0 3px #000;
+}
+
+.paginationItem:hover {
+    cursor: pointer;
+    background-color: var(--red);
+    border-color: var(--red);
+    scale: 1.2;
+}
+
+.pageSelected {
+    background-color: var(--red);
+    border-color: var(--red);
+}

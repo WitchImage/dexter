@@ -12,9 +12,11 @@ export async function getPokemonByName(name: string): Promise<Pokemon> {
 
 export async function getPokemons({
     perPage,
-    offset,
+    page,
 }: Pagination): Promise<Pokemon[]> {
     if (POKE_API_URL) {
+        const offset: number = page === 1 ? 0 : page * perPage;
+
         return await utilityAPI
             .getResourceByUrl(
                 `${POKE_API_URL}/pokemon?limit=${perPage}&offset=${offset}`

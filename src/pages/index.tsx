@@ -1,4 +1,4 @@
-import Pokemons from '@/components/pokemons/pokemons';
+import { Pokemons } from '@/components';
 import { getPokemons } from '@/services/pokemons-services';
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
@@ -26,7 +26,7 @@ const Home: NextPage<Props> = ({ pokemons }: Props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {
-    const pokemons: Pokemon[] = await getPokemons({ perPage: 10, offset: 200 });
+    const pokemons: Pokemon[] = await getPokemons({ perPage: 10, page: 1 });
 
     return {
         props: {

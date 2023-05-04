@@ -6,6 +6,7 @@
 
 .pokemonsContainer {
     width: 90%;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -23,4 +24,13 @@
     display: flex;
     place-items: center;
     gap: 1rem;
+}
+
+.pagination {
+    width: '100%';
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    display: flex;
+    place-content: center;
 }

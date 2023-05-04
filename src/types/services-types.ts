@@ -1,6 +1,6 @@
 export type Pagination = {
     perPage: number;
-    offset: number;
+    page: number;
 };
 
 export type UtilityResponse = {
