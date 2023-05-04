@@ -19,7 +19,7 @@
     place-items: center;
 }
 
-.header>.h1 {
+.header > .h1 {
     display: flex;
     place-items: center;
     gap: 1rem;

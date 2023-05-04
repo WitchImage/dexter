@@ -1,5 +1,5 @@
-@import "spacing.css";
-@import "pokemon-type-backgrounds.css";
+@import 'spacing.css';
+@import 'pokemon-type-backgrounds.css';
 :root {
     font-family: 'Sono', sans-serif;
     --bg-color: #08000e;

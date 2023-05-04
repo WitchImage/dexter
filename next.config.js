@@ -5,8 +5,8 @@ const nextConfig = {
         domains: [
             'https://raw.githubusercontent.com',
             'raw.githubusercontent.com',
-        ]
-    }
+        ],
+    },
 };
 
 module.exports = nextConfig;
