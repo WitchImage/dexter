@@ -1,15 +1,16 @@
-import type { Pokemon } from 'pokenode-ts';
 import type { FC } from 'react';
 import styles from './pokemons.module.css';
 import Image from 'next/image';
 import PokemonCard from '../cards/pokemon-card';
 import { Pagination } from '..';
+import { type SimplePokemon } from '@/types/pokemon-types';
 
 interface Props {
-    pokemons: Pokemon[];
+    pokemons: SimplePokemon[];
+    page: number;
 }
 
-const Pokemons: FC<Props> = ({ pokemons }) => {
+const Pokemons: FC<Props> = ({ pokemons, page }) => {
     return (
         <>
             <header className={styles.header}>
@@ -43,7 +44,7 @@ const Pokemons: FC<Props> = ({ pokemons }) => {
                 }}
             >
                 <Pagination
-                    currentPage={1}
+                    currentPage={page}
                     initPage={1}
                     lastPage={10}
                 />

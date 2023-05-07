@@ -1,5 +1,5 @@
 import PokemonDetails from '@/components/pokemons/pokemon-details';
-import { getPokemonByName } from '@/services/pokemons-services';
+import { getSimplePokemonByName } from '@/services/pokemons-services';
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import type { Pokemon } from 'pokenode-ts';
@@ -24,7 +24,9 @@ const PokemonPage: NextPage<Props, any> = ({ pokemon }: Props) => {
 export const getServerSideProps: GetServerSideProps = async context => {
     const { name: pokemonName } = context.query;
     console.log(pokemonName);
-    const pokemon: Pokemon = await getPokemonByName(pokemonName as string);
+    const pokemon: Pokemon = await getSimplePokemonByName(
+        pokemonName as string
+    );
 
     return {
         props: {

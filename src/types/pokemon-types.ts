@@ -17,3 +17,10 @@ export type PokemonType =
     | 'dark'
     | 'steel'
     | 'fairy';
+
+export interface SimplePokemon {
+    id: number;
+    name: string;
+    type: PokemonType;
+    image: string;
+}

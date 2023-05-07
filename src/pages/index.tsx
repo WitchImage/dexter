@@ -1,14 +1,15 @@
 import { Pokemons } from '@/components';
 import { getPokemons } from '@/services/pokemons-services';
+import { type SimplePokemon } from '@/types/pokemon-types';
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import type { Pokemon } from 'pokenode-ts';
 
 interface Props {
-    pokemons: Pokemon[];
+    pokemons: SimplePokemon[];
+    page: number;
 }
 
-const Home: NextPage<Props> = ({ pokemons }: Props) => {
+const Home: NextPage<Props> = ({ pokemons, page }: Props) => {
     return (
         <>
             <Head>
@@ -19,18 +20,27 @@ const Home: NextPage<Props> = ({ pokemons }: Props) => {
                 />
             </Head>
             <main className='m-0'>
-                <Pokemons pokemons={pokemons} />
+                <Pokemons
+                    pokemons={pokemons}
+                    page={page}
+                />
             </main>
         </>
     );
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {
-    const pokemons: Pokemon[] = await getPokemons({ perPage: 10, page: 1 });
+    const { page } = context.query;
+
+    const pokemons: SimplePokemon[] = await getPokemons({
+        perPage: 10,
+        page: page ? parseInt(page as string) : 1,
+    });
 
     return {
         props: {
             pokemons,
+            page: page ?? 1,
         },
     };
 };
