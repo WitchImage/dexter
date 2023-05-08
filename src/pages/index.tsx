@@ -40,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return {
         props: {
             pokemons,
-            page: page ?? 1,
+            page: parseInt(page as string) ?? 1,
         },
     };
 };
