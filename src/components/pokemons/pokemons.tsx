@@ -4,6 +4,7 @@ import Image from 'next/image';
 import PokemonCard from '../cards/pokemon-card';
 import { Pagination } from '..';
 import { type SimplePokemon } from '@/types/pokemon-types';
+import { useRouter } from 'next/router';
 
 interface Props {
     pokemons: SimplePokemon[];
@@ -11,6 +12,8 @@ interface Props {
 }
 
 const Pokemons: FC<Props> = ({ pokemons, page }) => {
+    const router = useRouter();
+
     return (
         <>
             <header className={styles.header}>
@@ -47,6 +50,7 @@ const Pokemons: FC<Props> = ({ pokemons, page }) => {
                     currentPage={page}
                     initPage={1}
                     lastPage={10}
+                    onPageChange={page => router.push(`/?page=${page}`)}
                 />
             </div>
         </>
