@@ -35,7 +35,7 @@ export async function getPokemons({
     page,
 }: Pagination): Promise<SimplePokemon[]> {
     if (POKE_API_URL) {
-        const offset: number = page === 1 ? 0 : page * perPage;
+        const offset: number = page === 1 ? 0 : (page - 1) * perPage;
 
         return await utilityAPI
             .getResourceByUrl(
